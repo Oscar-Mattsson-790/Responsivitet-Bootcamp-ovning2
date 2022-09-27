@@ -1,0 +1,67 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+}
+
+.container {
+  min-height: 100vh;
+  min-width: 50vw;
+  display: grid;
+  grid-template-columns: 25% 1fr 25%;
+  grid-template-rows: 1fr 75% 1fr;
+  grid-template-areas:
+    "header header header"
+    "main main main"
+    "footer footer footer";
+  gap: 1rem;
+}
+.header {
+  display: flex;
+  gap: 1rem;
+  grid-area: header;
+}
+
+.box {
+  background-color: #b2008a;
+  width: 25%;
+}
+
+.main {
+  display: flex;
+  grid-area: main;
+  gap: 0.7rem;
+}
+
+.mid-box {
+  width: 33.33%;
+  background-color: #fd96a9;
+}
+
+.footer {
+  background-color: #c1c99a;
+  grid-area: footer;
+}
+
+@media screen and (max-width: 600px) {
+  .header {
+    flex-wrap: wrap;
+    gap: 0.1rem;
+  }
+  .box {
+    width: 49%;
+    height: 50%;
+  }
+
+  .main {
+    flex-direction: column;
+  }
+
+  .mid-box {
+    height: 40%;
+    width: 100%;
+  }
+}
